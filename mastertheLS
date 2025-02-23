@@ -1,0 +1,1 @@
+ls -p --format=comma -t | tr -d ' '

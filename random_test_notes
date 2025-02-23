@@ -1,0 +1,52 @@
+123
+10
+
+
+             12
+23
+20
+
+123 /10 = 12
+3
+
+
+
+
+
+[ 1 2 3 45 5]
+
+
+
+
+	// var array_number []int
+	// for i := 0; i < len(array_number); i++ {
+	// 	for j := i + 1; j < len(array_number); j++ {
+	// 		if array_number[i] > array_number[j] {
+	// 			array_number[i], array_number[j] = array_number[j], array_number[i]
+	// 			array_number = append(array_number, nb)
+	// 		}
+	// 	}
+	// 	x = x * 10
+	// }
+
+
+
+package piscine
+
+import "github.com/01-edu/z01"
+
+func PrintNbrInOrder(n int) { 
+	arr := []int{} 
+	for n > 0 { 
+		arr = append(arr, n%10) 
+		n = n / 10
+	}
+	for i := 0; i < len(arr); i++ { 
+		for j := i + 1; j < len(arr); j++ { 
+			arr[i], arr[j] = arr[j], arr[i]
+		}
+	}
+	for _, ch := range arr {
+		z01.PrintRune(rune(ch + 48))
+	}
+}
